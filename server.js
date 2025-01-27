@@ -18,7 +18,7 @@ app.use(express.json()); // Enable parsing JSON in POST requests
 // Route to set the cookie
 app.post('/set-cookie', (req, res) => {
   res.cookie('myCookie', 'myValue', {
-    domain: 'cookie-p1yx.onrender.com', // Target domain
+    domain: '.onrender.com', // Target domain
     path: '/', // Cookie available site-wide
     secure: true, // HTTPS only
     httpOnly: true, // Not accessible via JavaScript
