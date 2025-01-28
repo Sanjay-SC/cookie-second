@@ -44,11 +44,12 @@ app.get('/', (req, res) => {
 
 app.get('/set-cookie', (req, res) => {
   res.cookie('crossDomainCookie', 'cookieValue', {
-    httpOnly: true,
-    secure: true, // Use HTTPS
-    // sameSite: 'None', // Allow cross-site requests
-    domain: '.onrender.com', // Set for your domain or subdomains
-    maxAge: 24 * 60 * 60 * 1000, // 1 day
+    domain: '.onrender.com', // Applies to all subdomains
+    path: '/',               // Available across all paths
+    httpOnly: true,          // Prevent JavaScript access
+    secure: true,            // HTTPS required
+    sameSite: 'None',        // Allow cross-site and subdomain requests
+    maxAge: 24 * 60 * 60 * 1000 // 1 day
   });
   res.send('Cookie set');
 });
