@@ -37,7 +37,6 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html')); // Adjust to your file's location
 });
 
-const http = require('http');
 
 const server = http.createServer((req, res) => {
   // Set cookie for all subdomains of .onrender.com
